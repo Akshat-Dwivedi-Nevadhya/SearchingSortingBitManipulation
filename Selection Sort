@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+public class SelectionSort {
+    public static void selectionSort(int [] arr){
+        for(int i=0;i< arr.length-1;i++){
+            for(int j=i+1;j<=arr.length-1;j++){
+                int smallest = arr[i];
+                if(smallest>arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+    }
+    public static void main(String[] args) {
+        int [] arr = {12, 4, 7, 9, 2, 23, 25, 41, 30, 40, 28, 42, 30, 44, 48, 43, 50};
+        selectionSort(arr);
+        System.out.println("The sorted array is: ");
+        System.out.println(Arrays.toString(arr));
+    }
+}
