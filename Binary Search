@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class BinarySearch {
+    public static int findSquareRoot(int n){
+        int low=0;int high = n;int result = -1;
+        while(low<=high){
+            int mid = (low+high)/2;
+            long val = (long) mid*mid;
+            if(val==n)
+                return mid;
+            else if (val<mid){
+                result = mid;
+                low = mid+1;
+            }
+            else
+                high = mid-1;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the the number: ");
+        int n = sc.nextInt();
+        int result = findSquareRoot(n);
+        System.out.println(result);
+    }
+}
